@@ -127,6 +127,14 @@
 }
 .screen {
   height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cardHolder {
+  display: flex;
+  justify-content: center;
 }
 @media (max-width: 600px) {
   .grid {

@@ -3,8 +3,9 @@ import styles from "../styles/Home.module.css";
 import NavBar from "../components/navBar";
 import Markdown from "react-markdown";
 import whoWeAre from "../content/who-we-are.md";
-
+import { useRef } from "react";
 export default function Home() {
+  const contentDivRef = useRef(null);
   return (
     <>
       <NavBar />
@@ -16,14 +17,23 @@ export default function Home() {
 
         <main className={styles.main}>
           <div className={styles.screen}>
-            <h1 className={styles.title}>HairySquid Industries</h1>
+            <h1 className={styles.title}>hairysquid Industries</h1>
 
             <h2 className={styles.description}>Need a website?</h2>
-            <h3 href="https://nextjs.org/learn" className={styles.card}>
-              <h3>I sure do!</h3>
-            </h3>
+            <div className={styles.cardHolder}>
+              <button
+                className={styles.card}
+                onClick={() => {
+                  contentDivRef.current.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                I sure do!
+              </button>
+            </div>
           </div>
-          <div className={styles.screen}>Work we do</div>
+          <div ref={contentDivRef} className={styles.screen}>
+            Work we do
+          </div>
           <div className={styles.screen}>
             <Markdown source={whoWeAre} />
           </div>
