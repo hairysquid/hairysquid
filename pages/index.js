@@ -1,6 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/navBar";
+import Markdown from "react-markdown";
+import whoWeAre from "../content/who-we-are.md";
+
 export default function Home() {
   return (
     <>
@@ -21,7 +24,9 @@ export default function Home() {
             </h3>
           </div>
           <div className={styles.screen}>Work we do</div>
-          <div className={styles.screen}>Who we are</div>
+          <div className={styles.screen}>
+            <Markdown source={whoWeAre} />
+          </div>
           {/* <div className={styles.grid}>
             <a href="https://nextjs.org/docs" className={styles.card}>
               <h3>Documentation &rarr;</h3>
