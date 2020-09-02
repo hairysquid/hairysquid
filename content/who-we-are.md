@@ -11,7 +11,7 @@
 * [Blog](https://www.aendrew.com)
 
 ## Kinga Janicka
-### Developer
+### developer
 
 Kinga has experience building websites in React. Check out her [chonky.cat](https://www.chonky.cat) project for a never-ending stream of cat photos.
 
