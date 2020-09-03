@@ -2,7 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/navBar";
 import Markdown from "react-markdown";
-import whoWeAre from "../content/who-we-are.md";
+import andi from "../content/who-we-are-andi.md";
+import kinga from "../content/who-we-are-kinga.md";
+import contact from "../content/contact.md";
 import { useRef } from "react";
 export default function Home() {
   const contentDivRef = useRef(null);
@@ -35,7 +37,16 @@ export default function Home() {
             Work we do
           </div>
           <div className={styles.screen}>
-            <Markdown source={whoWeAre} />
+            <h2 className={styles.title}>Who We Are</h2>
+            <div className={styles.team}>
+              <div>
+                <Markdown source={andi} />
+              </div>
+
+              <div>
+                <Markdown source={kinga} />
+              </div>
+            </div>
           </div>
           {/* <div className={styles.grid}>
             <a href="https://nextjs.org/docs" className={styles.card}>
@@ -66,21 +77,13 @@ export default function Home() {
               </p>
             </a>
           </div> */}
+          <div className={styles.screen}>
+            {" "}
+            <Markdown source={contact} />
+          </div>
         </main>
 
-        <footer className={styles.footer}>
-          <div className={styles.gridFooter}>
-            <div>Copyright HairySquid Industries 2020</div>
-            <div>
-              Contact <br />
-              <ul>
-                <li>Email</li>
-                <li>Mastodon</li>
-                <li>Twitter</li>
-              </ul>
-            </div>
-          </div>
-        </footer>
+        <footer className={styles.footer}>footer</footer>
       </div>
     </>
   );
