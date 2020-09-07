@@ -5,7 +5,9 @@ import Markdown from "react-markdown";
 import andi from "../content/who-we-are-andi.md";
 import kinga from "../content/who-we-are-kinga.md";
 import contact from "../content/contact.md";
+import approach from "../content/our-approach.md";
 import { useRef } from "react";
+import ContactForm from "../content/contact-form";
 export default function Home() {
   const contentDivRef = useRef(null);
   return (
@@ -13,28 +15,38 @@ export default function Home() {
       <NavBar />
       <div className={styles.container}>
         <Head>
-          <title>HairySquid Industries</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>hairysquid Industries</title>
+          <link
+            rel="icon"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway&display=swap"
+            rel="stylesheet"
+          />
         </Head>
 
         <main className={styles.main}>
-          <div className={styles.screen}>
-            <h1 className={styles.title}>hairysquid Industries</h1>
+          <div className={styles.team}>
+            <div className={styles.screen}>
+              <h1 className={styles.title}>hairysquid Industries</h1>
 
-            <h2 className={styles.description}>Need a website?</h2>
-            <div className={styles.cardHolder}>
-              <button
-                className={styles.card}
-                onClick={() => {
-                  contentDivRef.current.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                I sure do!
-              </button>
+              <h2 className={styles.description}>Need a website?</h2>
+              <div className={styles.cardHolder}>
+                <button
+                  className={styles.card}
+                  onClick={() => {
+                    contentDivRef.current.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  I sure do!
+                </button>
+              </div>
             </div>
           </div>
           <div ref={contentDivRef} className={styles.screen}>
-            Work we do
+            <div className={styles.approach}>
+              <Markdown source={approach} />
+            </div>
           </div>
           <div className={styles.screen}>
             <h2 className={styles.title}>Who We Are</h2>
@@ -80,6 +92,7 @@ export default function Home() {
           <div className={styles.screen}>
             {" "}
             <Markdown source={contact} />
+            <ContactForm />
           </div>
         </main>
 

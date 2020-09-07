@@ -1,4 +1,4 @@
-# Our Approach
+# Our Approach
 
 We leverage the "JAM" (Javascript/APIs/Markup) stack to create scalable, cost-effective web presences. This means:
 

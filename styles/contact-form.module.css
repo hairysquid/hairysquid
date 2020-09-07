@@ -1,0 +1,15 @@
+.label {
+  padding-block: 1vh;
+}
+
+.message {
+  width: 30vw;
+  height: 20vh;
+}
+
+.button {
+  font-weight: bold;
+  width: 7vw;
+  height: 4 vh;
+  font-size: 1.75vh;
+}

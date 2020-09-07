@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 .footer {
@@ -48,6 +49,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .title,
@@ -141,6 +143,13 @@
 }
 .team div {
   flex: 1;
+  padding: 7vw;
+}
+
+.approach {
+  display: flex;
+  flex-direction: column;
+
   padding: 7vw;
 }
 @media (max-width: 600px) {
