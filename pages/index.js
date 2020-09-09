@@ -10,9 +10,21 @@ import { useRef } from "react";
 import ContactForm from "../content/contact-form";
 export default function Home() {
   const contentDivRef = useRef(null);
+  const homeRef = useRef(null);
+  const ourApproachRef = useRef(null);
+  const whoWeAreRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <>
-      <NavBar />
+      <NavBar
+        sectionRefs={{
+          home: homeRef,
+          ourApproach: ourApproachRef,
+          whoWeAre: whoWeAreRef,
+          contact: contactRef,
+        }}
+      />
       <div className={styles.container}>
         <Head>
           <title>hairysquid Industries</title>
@@ -25,7 +37,7 @@ export default function Home() {
 
         <main className={styles.main}>
           <div className={styles.team}>
-            <div className={styles.screen}>
+            <div ref={homeRef} className={styles.screen}>
               <h1 className={styles.title}>hairysquid Industries</h1>
 
               <h2 className={styles.description}>Need a website?</h2>
@@ -44,11 +56,11 @@ export default function Home() {
             </div>
           </div>
           <div ref={contentDivRef} className={styles.screen}>
-            <div className={styles.approach}>
+            <div ref={ourApproachRef} className={styles.approach}>
               <Markdown source={approach} />
             </div>
           </div>
-          <div className={styles.screen}>
+          <div ref={whoWeAreRef} className={styles.screen}>
             <h2 className={styles.title}>Who We Are</h2>
             <div className={styles.team}>
               <div>
@@ -89,14 +101,16 @@ export default function Home() {
               </p>
             </a>
           </div> */}
-          <div className={styles.screen}>
+          <div ref={contactRef} className={styles.screen}>
             {" "}
             <Markdown source={contact} />
             <ContactForm />
           </div>
         </main>
 
-        <footer className={styles.footer}>footer</footer>
+        <footer className={styles.footer}>
+          Copyright hairysquid Industries
+        </footer>
       </div>
     </>
   );
