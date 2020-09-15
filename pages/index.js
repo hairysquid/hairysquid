@@ -36,27 +36,26 @@ export default function Home() {
         </Head>
 
         <main className={styles.main}>
-          <div className={styles.team}>
-            <div ref={homeRef} className={styles.screen}>
-              <h1 className={styles.title}>hairysquid Industries</h1>
+          <div ref={homeRef} className={styles.screen}>
+            <h1 className={styles.title}>hairysquid Industries</h1>
 
-              <h2 className={styles.description}>Need a website?</h2>
-              <div className={styles.cardHolder}>
-                <button
-                  className={styles.card}
-                  onClick={() => {
-                    contentDivRef.current.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }}
-                >
-                  I sure do!
-                </button>
-              </div>
+            <h2 className={styles.description}>Need a website?</h2>
+            <div className={styles.cardHolder}>
+              <button
+                className={styles.button}
+                style={{ marginTop: "1em" }}
+                onClick={() => {
+                  ourApproachRef.current.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                I sure do!
+              </button>
             </div>
           </div>
-          <div ref={contentDivRef} className={styles.screen}>
-            <div ref={ourApproachRef} className={styles.approach}>
+          <div ref={ourApproachRef} className={styles.screen}>
+            <div className={styles.approach}>
               <Markdown source={approach} />
             </div>
           </div>
@@ -72,44 +71,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
 
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className={styles.card}
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
-          </div> */}
           <div ref={contactRef} className={styles.screen}>
-            {" "}
-            <Markdown source={contact} />
-            <ContactForm />
+            <div>
+              <Markdown source={contact} />
+              <ContactForm />
+            </div>
           </div>
         </main>
 
         <footer className={styles.footer}>
-          Copyright hairysquid Industries
+          &copy; copyright {new Date().getFullYear()} hairysquid industries. all
+          rights reserved.
         </footer>
       </div>
     </>

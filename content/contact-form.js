@@ -1,12 +1,18 @@
 import styles from "../styles/contact-form.module.css";
 import { TextArea } from "semantic-ui-react";
+import { useForm, ValidationError } from "@statickit/react";
 
 export default function ContactForm() {
+  const [state, handleSubmit] = useForm("contactForm");
+  if (state.succeeded) {
+    return <p>Thanks for messaging me, I'll get back to you shortly</p>;
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className={styles.label}>
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
           <br />
           <input type="text" id="name" name="name" />
           <br />
