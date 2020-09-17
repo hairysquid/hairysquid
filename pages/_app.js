@@ -3,7 +3,7 @@ import { StaticKitProvider } from "@statickit/react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <StaticKitProvider site="39a836dc9c7f">
+    <StaticKitProvider site="de24cb33b4b7">
       <Component {...pageProps} />
     </StaticKitProvider>
   );
