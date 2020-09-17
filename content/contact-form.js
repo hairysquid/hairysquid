@@ -12,7 +12,9 @@ export default function ContactForm() {
 
   useEffect(() => {
     try {
-      loadReCaptcha(process.env.WEB_KEY, () => setRecaptchaReady(true));
+      loadReCaptcha(process.env.NEXT_PUBLIC_WEBSITE_KEY, () =>
+        setRecaptchaReady(true)
+      );
     } catch (e) {
       console.error(e);
     }
@@ -54,7 +56,7 @@ export default function ContactForm() {
         </div>
         <ReCaptcha
           ref={reCaptchaRef}
-          sitekey={process.env.WEB_KEY}
+          sitekey={process.env.NEXT_PUBLIC_WEBSITE_KEY}
           action="sendEmail"
           verifyCallback={() => {
             setCaptchaSuccess(true);
