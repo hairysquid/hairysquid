@@ -20,7 +20,7 @@ export default function ContactForm() {
   }, []);
 
   if (state.succeeded) {
-    return <p>Thanks for messaging me, I'll get back to you shortly</p>;
+    return <p>Thanks for messaging us, we will get back to you shortly</p>;
   }
 
   return (
