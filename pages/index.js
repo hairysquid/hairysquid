@@ -7,7 +7,7 @@ import kinga from "../content/who-we-are-kinga.md";
 import contact from "../content/contact.md";
 import approach from "../content/our-approach.md";
 import { useRef } from "react";
-import ContactForm from "../content/contact-form";
+import ContactForm from "./contact-form";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
