@@ -1,6 +1,5 @@
 import styles from "../styles/contact-form.module.css";
 import React, { useState, useEffect, useRef } from "react";
-import { TextArea } from "semantic-ui-react";
 import { useForm, ValidationError } from "@statickit/react";
 import { ReCaptcha, loadReCaptcha } from "react-recaptcha-v3";
 
