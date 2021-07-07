@@ -1,5 +1,5 @@
 import styles from "../styles/contact-form.module.css";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
@@ -40,15 +40,13 @@ export default function ContactForm() {
           />
         </div>
         <div className={styles.label}>
-          {captchaSuccess && (
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className={styles.button}
-            >
-              Submit
-            </button>
-          )}
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className={styles.button}
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
