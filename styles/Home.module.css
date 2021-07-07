@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -121,10 +122,11 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  text-align: center;
+  /* text-align: center; */
   align-content: center;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .cardHolder {
   display: flex;
@@ -136,7 +138,7 @@
   flex-direction: row;
 }
 .team div {
-  flex: 1;
+  /* flex: 1; */
   padding: 7vw;
 }
 
@@ -151,4 +153,11 @@
     width: 100%;
     flex-direction: column;
   }
+}
+.ul {
+  padding: 1em;
+}
+.contact {
+  width: 50vw;
+  padding: 7vw;
 }

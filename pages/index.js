@@ -37,7 +37,7 @@ export default function Home() {
 
         <main className={styles.main}>
           <div ref={homeRef} className={styles.screen}>
-            <h1 className={styles.title}>hairysquid Industries</h1>
+            <h1 className={styles.title}>Hairysquid Ltd.</h1>
 
             <h2 className={styles.description}>Need a website?</h2>
             <div className={styles.cardHolder}>
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           <div ref={contactRef} className={styles.screen}>
-            <div>
+            <div className={styles.contact}>
               <Markdown source={contact} />
               <ContactForm />
             </div>
@@ -81,8 +81,8 @@ export default function Home() {
         </main>
 
         <footer className={styles.footer}>
-          &copy; copyright {new Date().getFullYear()} hairysquid industries. all
-          rights reserved.
+          &copy; copyright {new Date().getFullYear()} Hairysquid Ltd. all rights
+          reserved.
         </footer>
       </div>
     </>
