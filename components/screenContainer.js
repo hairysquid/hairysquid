@@ -9,7 +9,7 @@ export default forwardRef(function ScreenContainer({ children }, ref) {
       ref={ref}
       css={css`
         height: 100vh;
-        width: 100vw;
+        width: 80vw;
         display: flex;
         /* text-align: center; */
         align-content: center;
