@@ -1,8 +1,9 @@
+/** @jsx jsx */
 import styles from "../styles/contact-form.module.css";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import LabelContainer from "../components/labelContainer";
-import { css } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xqkwlonj");
 

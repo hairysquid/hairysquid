@@ -1,6 +1,8 @@
+/** @jsx jsx */
+
 import * as styles from "./navBar.module.css";
 import { useRef, useLayoutEffect, useState } from "react";
-import { css } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 export default function NavBar({ sectionRefs }) {
   const [isHidden, setIsHidden] = useState(false);
   const yPosRef = useRef(0);
@@ -30,6 +32,13 @@ export default function NavBar({ sectionRefs }) {
         position: fixed;
         width: 100%;
         transition: top 0.3s;
+        a {
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px;
+          text-decoration: none;
+          cursor: pointer;
+        }
       `}
     >
       <a

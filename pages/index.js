@@ -1,3 +1,5 @@
+/** @jsx jsx */
+
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/navBar";
@@ -17,7 +19,7 @@ import ApproachContainer from "../components/approachContainer";
 import ContactContainer from "../components/contactContainer";
 import DescriptionText from "../components/descriptionText";
 import Footer from "../components/footer";
-import { css } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
