@@ -70,6 +70,15 @@ export default function NavBar({ sectionRefs }) {
       </a>
       <a
         onClick={() => {
+          sectionRefs.ourProjects.current.scrollIntoView({
+            behavior: "smooth",
+          });
+        }}
+      >
+        Our Projects
+      </a>
+      <a
+        onClick={() => {
           sectionRefs.contact.current.scrollIntoView({
             behavior: "smooth",
           });

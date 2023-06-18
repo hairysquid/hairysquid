@@ -20,11 +20,14 @@ import ContactContainer from "../components/contactContainer";
 import DescriptionText from "../components/descriptionText";
 import Footer from "../components/footer";
 import { css, jsx } from "@emotion/react";
+import OurProjectsContainer from "../components/ourProjectsContainer";
+import ContractCard from "../components/contractCard";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
   const ourApproachRef = useRef(null);
   const whoWeAreRef = useRef(null);
+  const ourProjects = useRef(null);
   const contactRef = useRef(null);
 
   return (
@@ -34,6 +37,7 @@ export default function Home() {
           home: homeRef,
           ourApproach: ourApproachRef,
           whoWeAre: whoWeAreRef,
+          ourProjects: ourProjects,
           contact: contactRef,
         }}
       />
@@ -92,6 +96,26 @@ export default function Home() {
                 <Markdown source={kinga} />
               </div>
             </TeamContainer>
+          </ScreenContainer>
+          <ScreenContainer ref={ourProjects}>
+            <TitleText>Our Projects</TitleText>
+            <OurProjectsContainer>
+              <ContractCard title="tutke" link="/contracts/test">
+                BLABLABLA
+              </ContractCard>
+              <ContractCard title="tutke" link="/contracts/test">
+                BLABLABLA
+              </ContractCard>
+              <ContractCard title="tutke" link="/contracts/test">
+                BLABLABLA
+              </ContractCard>
+              <ContractCard title="tutke" link="/contracts/test">
+                BLABLABLA
+              </ContractCard>
+              <ContractCard title="tutke" link="/contracts/test">
+                BLABLABLA
+              </ContractCard>
+            </OurProjectsContainer>
           </ScreenContainer>
 
           <ScreenContainer ref={contactRef}>
