@@ -8,6 +8,9 @@ import contact from "../content/contact.md";
 import approach from "../content/our-approach.md";
 import { useRef } from "react";
 import ContactForm from "./contact-form";
+import ScreenContainer from "../components/screenContainer";
+import CardHolder from "../components/cardHolder";
+import MainContainer from "../components/mainContainer";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
@@ -35,12 +38,12 @@ export default function Home() {
           />
         </Head>
 
-        <main className={styles.main}>
-          <div ref={homeRef} className={styles.screen}>
+        <MainContainer>
+          <ScreenContainer ref={homeRef}>
             <h1 className={styles.title}>Hairysquid Ltd.</h1>
 
             <h2 className={styles.description}>Need a website?</h2>
-            <div className={styles.cardHolder}>
+            <CardHolder>
               <button
                 className={styles.button}
                 style={{ marginTop: "1em" }}
@@ -52,8 +55,8 @@ export default function Home() {
               >
                 I sure do!
               </button>
-            </div>
-          </div>
+            </CardHolder>
+          </ScreenContainer>
           <div ref={ourApproachRef} className={styles.screen}>
             <div className={styles.approach}>
               <Markdown source={approach} />
@@ -78,7 +81,7 @@ export default function Home() {
               <ContactForm />
             </div>
           </div>
-        </main>
+        </MainContainer>
 
         <footer className={styles.footer}>
           &copy; copyright {new Date().getFullYear()} Hairysquid Ltd. all rights
