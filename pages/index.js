@@ -11,6 +11,11 @@ import ContactForm from "./contact-form";
 import ScreenContainer from "../components/screenContainer";
 import CardHolder from "../components/cardHolder";
 import MainContainer from "../components/mainContainer";
+import TeamContainer from "../components/teamContainer";
+import TitleText from "../components/titleText";
+import ApproachContainer from "../components/approachContainer";
+import ContactContainer from "../components/contactContainer";
+import DescriptionText from "../components/descriptionText";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
@@ -40,9 +45,13 @@ export default function Home() {
 
         <MainContainer>
           <ScreenContainer ref={homeRef}>
-            <h1 className={styles.title}>Hairysquid Ltd.</h1>
+            <TitleText>
+              <h1>Hairysquid Ltd.</h1>
+            </TitleText>
 
-            <h2 className={styles.description}>Need a website?</h2>
+            <DescriptionText>
+              <h2>Need a website?</h2>
+            </DescriptionText>
             <CardHolder>
               <button
                 className={styles.button}
@@ -57,14 +66,16 @@ export default function Home() {
               </button>
             </CardHolder>
           </ScreenContainer>
-          <div ref={ourApproachRef} className={styles.screen}>
-            <div className={styles.approach}>
+          <ScreenContainer ref={ourApproachRef}>
+            <ApproachContainer>
               <Markdown source={approach} />
-            </div>
-          </div>
-          <div ref={whoWeAreRef} className={styles.screen}>
-            <h2 className={styles.title}>Who We Are</h2>
-            <div className={styles.team}>
+            </ApproachContainer>
+          </ScreenContainer>
+          <ScreenContainer ref={whoWeAreRef}>
+            <TitleText>
+              <h2>Who We Are</h2>
+            </TitleText>
+            <TeamContainer>
               <div>
                 <Markdown source={andi} />
               </div>
@@ -72,21 +83,18 @@ export default function Home() {
               <div>
                 <Markdown source={kinga} />
               </div>
-            </div>
-          </div>
+            </TeamContainer>
+          </ScreenContainer>
 
-          <div ref={contactRef} className={styles.screen}>
-            <div className={styles.contact}>
+          <ScreenContainer ref={contactRef}>
+            <ContactContainer>
               <Markdown source={contact} />
               <ContactForm />
-            </div>
-          </div>
+            </ContactContainer>
+          </ScreenContainer>
         </MainContainer>
 
-        <footer className={styles.footer}>
-          &copy; copyright {new Date().getFullYear()} Hairysquid Ltd. all rights
-          reserved.
-        </footer>
+        <Footer />
       </div>
     </>
   );
