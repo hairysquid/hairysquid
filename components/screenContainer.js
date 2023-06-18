@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
+import { forwardRef } from "react";
 
-export default function ScreenContainer(ref, { children }) {
+export default forwardRef(function ScreenContainer({ children }, ref) {
   return (
     <div
       ref={ref}
@@ -18,4 +19,4 @@ export default function ScreenContainer(ref, { children }) {
       {children}
     </div>
   );
-}
+});
