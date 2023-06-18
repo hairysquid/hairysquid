@@ -1,6 +1,6 @@
 import * as styles from "./navBar.module.css";
 import { useRef, useLayoutEffect, useState } from "react";
-
+import { css } from "@emotion/react";
 export default function NavBar({ sectionRefs }) {
   const [isHidden, setIsHidden] = useState(false);
   const yPosRef = useRef(0);
@@ -20,7 +20,18 @@ export default function NavBar({ sectionRefs }) {
   }, []);
 
   return (
-    <div style={{ top: isHidden ? "-50px" : 0 }} className={styles.navbar}>
+    <div
+      style={{ top: isHidden ? "-50px" : 0 }}
+      css={css`
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+        background-color: rgba(155, 155, 155, 0.9);
+        position: fixed;
+        width: 100%;
+        transition: top 0.3s;
+      `}
+    >
       <a
         onClick={() => {
           sectionRefs.home.current.scrollIntoView({

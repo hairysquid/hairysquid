@@ -1,7 +1,8 @@
 import styles from "../styles/contact-form.module.css";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-
+import LabelContainer from "../components/labelContainer";
+import { css } from "@emotion/react";
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xqkwlonj");
 
@@ -12,42 +13,59 @@ export default function ContactForm() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className={styles.label}>
+        <LabelContainer>
           <label htmlFor="name">Name</label>
           <br />
           <input type="text" id="name" name="name" />
           <br />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
-        </div>
-        <div className={styles.label}>
+        </LabelContainer>
+        <LabelContainer>
           <label for="topic">Topic</label>
           <br />
           <input type="text" id="topic" name="topic" />
           <br />
           <ValidationError prefix="Topic" field="topic" errors={state.errors} />
-        </div>
-        <div className={styles.label}>
-          <label for="message" className={styles.label}>
+        </LabelContainer>
+        <LabelContainer>
+          <label
+            for="message"
+            css={css`
+              padding-block: 1vh;
+            `}
+          >
             Message
           </label>
           <br />
-          <textarea id="message" name="message" className={styles.message} />
+          <textarea
+            id="message"
+            name="message"
+            css={css`
+              width: 30vw;
+              height: 20vh;
+            `}
+          />
           <br />
           <ValidationError
             prefix="Message"
             field="message"
             errors={state.errors}
           />
-        </div>
-        <div className={styles.label}>
+        </LabelContainer>
+        <LabelContainer>
           <button
             type="submit"
             disabled={state.submitting}
-            className={styles.button}
+            css={css`
+              font-weight: bold;
+              width: 7vw;
+              height: 4 vh;
+              font-size: 1.75vh;
+            `}
           >
             Submit
           </button>
-        </div>
+        </LabelContainer>
       </form>
     </div>
   );
