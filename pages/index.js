@@ -16,6 +16,8 @@ import TitleText from "../components/titleText";
 import ApproachContainer from "../components/approachContainer";
 import ContactContainer from "../components/contactContainer";
 import DescriptionText from "../components/descriptionText";
+import Footer from "../components/footer";
+import { css } from "@emotion/react";
 export default function Home() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
@@ -33,7 +35,11 @@ export default function Home() {
           contact: contactRef,
         }}
       />
-      <div className={styles.container}>
+      <div
+        css={css`
+          min-height: 100vh;
+        `}
+      >
         <Head>
           <title>hairysquid Industries</title>
           <link
