@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@formspree/react": "^2.2.3",
     "next": "9.5.2",
     "react": "16.13.1",
@@ -19,5 +20,8 @@
   },
   "devDependencies": {
     "raw-loader": "^4.0.1"
+  },
+  "volta": {
+    "node": "16.20.0"
   }
 }
