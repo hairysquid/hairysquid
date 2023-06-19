@@ -103,17 +103,11 @@ export default function Home() {
               <ContractCard title="UKEF" link="/contracts/ukef">
                 This was a puff piece for the brexit gov
               </ContractCard>
-              <ContractCard title="tutke" link="/contracts/test">
-                BLABLABLA
+              <ContractCard title="Human Threads" link="/contracts/human">
+                This was a contract for a welsh muesum during covid
               </ContractCard>
-              <ContractCard title="tutke" link="/contracts/test">
-                BLABLABLA
-              </ContractCard>
-              <ContractCard title="tutke" link="/contracts/test">
-                BLABLABLA
-              </ContractCard>
-              <ContractCard title="tutke" link="/contracts/test">
-                BLABLABLA
+              <ContractCard title="I3" link="/contracts/i3">
+                A project that less people seen than worked on for meta
               </ContractCard>
             </OurProjectsContainer>
           </ScreenContainer>
