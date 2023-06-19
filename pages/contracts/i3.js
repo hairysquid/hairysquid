@@ -6,7 +6,7 @@ import NavBar from "../../components/navBar";
 import { useRef } from "react";
 import ImageContainer from "../../components/imageContainer";
 
-export default function Ukef() {
+export default function I3() {
   const contentDivRef = useRef(null);
   const homeRef = useRef(null);
   const ourApproachRef = useRef(null);
@@ -25,19 +25,26 @@ export default function Ukef() {
         }}
       />
       <MainContainer>
-        UKEF
+        I3
         <div
           css={css`
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            flex-wrap: wrap;
           `}
         >
-          <ImageContainer src="/img/ukef1.png" imgHeight="500px;">
+          <ImageContainer src="/img/i3home.png" imgHeight="500px;">
             bla bla bla
           </ImageContainer>
-          <ImageContainer src="/img/ukef2.png" imgHeight="500px;">
+          <ImageContainer src="/img/i3c.png" imgHeight="500px;">
+            bla bla bla
+          </ImageContainer>
+          <ImageContainer src="/img/i3.png" imgHeight="500px;">
+            bla bla bla
+          </ImageContainer>
+          <ImageContainer src="/img/i3b.png" imgHeight="500px;">
             bla bla bla
           </ImageContainer>
         </div>
