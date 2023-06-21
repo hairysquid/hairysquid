@@ -16,6 +16,7 @@ export default function Human() {
   return (
     <>
       <NavBar
+        link
         sectionRefs={{
           home: homeRef,
           ourApproach: ourApproachRef,
