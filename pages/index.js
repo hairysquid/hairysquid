@@ -78,12 +78,12 @@ export default function Home() {
               </button>
             </CardHolder>
           </ScreenContainer>
-          <ScreenContainer ref={ourApproachRef}>
+          <ScreenContainer ref={ourApproachRef} id="our-approach">
             <ApproachContainer>
               <Markdown source={approach} />
             </ApproachContainer>
           </ScreenContainer>
-          <ScreenContainer ref={whoWeAreRef}>
+          <ScreenContainer ref={whoWeAreRef} id="who-we-are">
             <TitleText>
               <h2>Who We Are</h2>
             </TitleText>
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
             </TeamContainer>
           </ScreenContainer>
-          <ScreenContainer ref={ourProjects}>
+          <ScreenContainer ref={ourProjects} id="our-projects">
             <TitleText>Our Projects</TitleText>
             <OurProjectsContainer>
               <ContractCard title="UKEF" link="/contracts/ukef">
@@ -112,7 +112,7 @@ export default function Home() {
             </OurProjectsContainer>
           </ScreenContainer>
 
-          <ScreenContainer ref={contactRef}>
+          <ScreenContainer ref={contactRef} id="contact">
             <ContactContainer>
               <Markdown source={contact} />
               <ContactForm />

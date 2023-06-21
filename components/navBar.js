@@ -53,36 +53,44 @@ export default function NavBar({ sectionRefs, link = false }) {
       </a>
       <a
         onClick={() => {
-          sectionRefs.ourApproach.current.scrollIntoView({
-            behavior: "smooth",
-          });
+          link
+            ? (location.href = "/#our-approach")
+            : sectionRefs.ourApproach.current.scrollIntoView({
+                behavior: "smooth",
+              });
         }}
       >
         Our Approach
       </a>
       <a
         onClick={() => {
-          sectionRefs.whoWeAre.current.scrollIntoView({
-            behavior: "smooth",
-          });
+          link
+            ? (location.href = "/#who-we-are")
+            : sectionRefs.whoWeAre.current.scrollIntoView({
+                behavior: "smooth",
+              });
         }}
       >
         Who We Are
       </a>
       <a
         onClick={() => {
-          sectionRefs.ourProjects.current.scrollIntoView({
-            behavior: "smooth",
-          });
+          link
+            ? (location.href = "/#our-projects")
+            : sectionRefs.ourProjects.current.scrollIntoView({
+                behavior: "smooth",
+              });
         }}
       >
         Our Projects
       </a>
       <a
         onClick={() => {
-          sectionRefs.contact.current.scrollIntoView({
-            behavior: "smooth",
-          });
+          link
+            ? (location.href = "/#contact")
+            : sectionRefs.contact.current.scrollIntoView({
+                behavior: "smooth",
+              });
         }}
       >
         Contact
