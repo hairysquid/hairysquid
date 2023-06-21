@@ -1,9 +1,8 @@
 /** @jsx jsx */
 
-import * as styles from "./navBar.module.css";
 import { useRef, useLayoutEffect, useState } from "react";
 import { css, jsx } from "@emotion/react";
-export default function NavBar({ sectionRefs }) {
+export default function NavBar({ sectionRefs, link = false }) {
   const [isHidden, setIsHidden] = useState(false);
   const yPosRef = useRef(0);
   useLayoutEffect(() => {
@@ -20,7 +19,7 @@ export default function NavBar({ sectionRefs }) {
       window.removeEventListener(listner);
     };
   }, []);
-
+  console.log(link, "LINK");
   return (
     <div
       style={{ top: isHidden ? "-50px" : 0 }}
@@ -43,9 +42,11 @@ export default function NavBar({ sectionRefs }) {
     >
       <a
         onClick={() => {
-          sectionRefs.home.current.scrollIntoView({
-            behavior: "smooth",
-          });
+          link
+            ? (location.href = "/")
+            : sectionRefs.home.current.scrollIntoView({
+                behavior: "smooth",
+              });
         }}
       >
         Home

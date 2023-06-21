@@ -16,6 +16,7 @@ export default function Ukef() {
   return (
     <>
       <NavBar
+        link
         sectionRefs={{
           home: homeRef,
           ourApproach: ourApproachRef,

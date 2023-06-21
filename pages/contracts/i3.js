@@ -16,6 +16,7 @@ export default function I3() {
   return (
     <>
       <NavBar
+        link
         sectionRefs={{
           home: homeRef,
           ourApproach: ourApproachRef,
