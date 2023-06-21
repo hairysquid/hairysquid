@@ -3,9 +3,10 @@
 import { css, jsx } from "@emotion/react";
 import { forwardRef } from "react";
 
-export default forwardRef(function ScreenContainer({ children }, ref) {
+export default forwardRef(function ScreenContainer({ children, id }, ref) {
   return (
     <div
+      id={id}
       ref={ref}
       css={css`
         height: 100vh;
