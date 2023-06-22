@@ -12,7 +12,7 @@ export default function ContractCard({ children, title, link }) {
       <div
         css={css`
           width: 100%;
-
+          height: 100%;
           background-color: lightgrey;
           border-radius: 1em;
           padding: 1em;
