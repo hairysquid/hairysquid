@@ -7,6 +7,7 @@ export default function ContractCard({ children, title, link }) {
       href={link}
       css={css`
         padding: 1em;
+        height: 100%;
       `}
     >
       <div
