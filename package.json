@@ -1,27 +1,16 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "hairysquid",
+  "type": "module",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@formspree/react": "^2.2.3",
-    "next": "9.5.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-markdown": "^4.3.1",
-    "react-recaptcha-v3": "^2.0.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^1.2.1"
-  },
-  "devDependencies": {
-    "raw-loader": "^4.0.1"
-  },
-  "volta": {
-    "node": "16.20.0"
+    "astro": "^4.16.0"
   }
 }

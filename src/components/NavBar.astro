@@ -1,0 +1,106 @@
+---
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#approach", label: "Our Approach" },
+  { href: "#team", label: "Who We Are" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<nav id="navbar" class="navbar">
+  <a href="#home" class="brand">
+    <img src="/logo.svg" alt="hairysquid logo" width="36" height="36" />
+    <span>hairysquid</span>
+  </a>
+  <div class="links">
+    {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.35s ease;
+  }
+
+  .navbar.hide {
+    transform: translateY(-110%);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+  }
+
+  .brand img {
+    filter: drop-shadow(0 0 8px rgba(236, 30, 147, 0.6));
+    transition: transform 0.4s ease;
+  }
+
+  .brand:hover img {
+    transform: rotate(-8deg) scale(1.08);
+  }
+
+  .links {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .links a:hover {
+    background: linear-gradient(90deg, var(--pink), var(--lime));
+    color: #0a0a0a;
+  }
+
+  @media (max-width: 640px) {
+    .brand span {
+      display: none;
+    }
+    .links a {
+      padding: 0.45rem 0.6rem;
+      font-size: 0.78rem;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("navbar");
+  let lastY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 120) {
+      nav?.classList.add("hide");
+    } else {
+      nav?.classList.remove("hide");
+    }
+    lastY = y;
+  });
+</script>

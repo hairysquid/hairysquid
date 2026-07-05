@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway");
+}
+
+:root {
+  --pink: #ec1e93;
+  --pink-light: #ff6fc4;
+  --lime: #a3e600;
+  --lime-dark: #7ab800;
+  --peach: #f9c896;
+  --ink: #0a0a0a;
+  --cream: #fff8ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: var(--ink);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--pink), var(--lime));
+  border-radius: 10px;
+}

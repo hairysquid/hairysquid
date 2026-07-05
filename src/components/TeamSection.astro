@@ -1,0 +1,146 @@
+---
+import Section from "./Section.astro";
+
+const team = [
+  {
+    name: "Ændra Rininsland",
+    role: "senior architect",
+    bio: 'Ændra has been developing websites since the nineties and has a very solid overview of the current web technology landscape. In addition to the work Ændra does with hairysquid, Ændra is a senior developer with the Visual Journalism team at the Financial Times.',
+    links: [
+      { label: "GitHub", href: "https://www.github.com/aendra-rininsland" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/aendra" },
+      { label: "Twitter", href: "https://www.twitter.com/aendra/" },
+      { label: "Blog", href: "https://www.aendra.com" },
+    ],
+  },
+  {
+    name: "Kinga Janicka",
+    role: "developer",
+    bio: "Kinga has experience building websites in React. Check out their chonky.cat project for a never-ending stream of cat photos.",
+    links: [
+      { label: "GitHub", href: "https://www.github.com/kingajanicka" },
+      { label: "Portfolio", href: "https://www.kinga.dev" },
+    ],
+  },
+];
+---
+
+<Section id="team" eyebrow="The crew" title="Who We Are">
+  <div class="team">
+    {team.map((person, i) => (
+      <article class="card reveal" style={`transition-delay:${i * 0.12}s`}>
+        <div class="avatar">{person.name.charAt(0)}</div>
+        <h3>{person.name}</h3>
+        <p class="role">{person.role}</p>
+        <p class="bio">{person.bio}</p>
+        <div class="links">
+          {person.links.map((l) => (
+            <a href={l.href} target="_blank" rel="noopener">{l.label}</a>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+</Section>
+
+<style>
+  .team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--pink), var(--lime));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(236, 30, 147, 0.25);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .avatar {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--lime), var(--pink-light));
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+  }
+
+  .role {
+    color: var(--pink-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin: 0 0 1rem;
+  }
+
+  .bio {
+    color: rgba(255, 248, 236, 0.75);
+    line-height: 1.6;
+    margin: 0 0 1.4rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .links a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: var(--cream);
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .links a:hover {
+    background: linear-gradient(90deg, var(--lime), var(--pink-light));
+    transform: translateY(-2px);
+  }
+</style>

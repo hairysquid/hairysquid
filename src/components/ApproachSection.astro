@@ -1,0 +1,114 @@
+---
+import Section from "./Section.astro";
+
+const points = [
+  {
+    icon: "⚡",
+    title: "Serverless backends",
+    body: "Workloads are delivered to users on an as-needed basis, meaning you don't pay for unused server resources.",
+  },
+  {
+    icon: "🌍",
+    title: "Static file hosting",
+    body: "Your content is available via an expansive edge network, so users are served content from the nearest geographic endpoint.",
+  },
+];
+---
+
+<Section id="approach" eyebrow="How we build" title="Our Approach">
+  <p class="lede reveal">
+    We leverage the <strong>"JAM"</strong> (JavaScript / APIs / Markup) stack to create
+    scalable, cost-effective web presences.
+  </p>
+
+  <div class="cards">
+    {points.map((p, i) => (
+      <div class="card reveal" style={`transition-delay:${i * 0.12}s`}>
+        <span class="icon">{p.icon}</span>
+        <h3>{p.title}</h3>
+        <p>{p.body}</p>
+      </div>
+    ))}
+  </div>
+
+  <p class="tools reveal">
+    We primarily use
+    <a href="https://vercel.com/solutions/nextjs" target="_blank" rel="noopener">Vercel® Next™️</a>
+    to build our experiences and
+    <a href="https://www.sanity.io/" target="_blank" rel="noopener">Sanity CMS</a>
+    for content management.
+  </p>
+</Section>
+
+<style>
+  .lede {
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+    font-size: 1.15rem;
+    color: rgba(255, 248, 236, 0.85);
+    line-height: 1.6;
+  }
+
+  .lede strong {
+    color: var(--pink-light);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    backdrop-filter: blur(6px);
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: var(--pink);
+    background: rgba(236, 30, 147, 0.08);
+  }
+
+  .icon {
+    font-size: 2.2rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--lime);
+  }
+
+  .card p {
+    margin: 0;
+    line-height: 1.55;
+    color: rgba(255, 248, 236, 0.75);
+  }
+
+  .tools {
+    max-width: 640px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    color: rgba(255, 248, 236, 0.7);
+  }
+
+  .tools a {
+    color: var(--pink-light);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s ease;
+  }
+
+  .tools a:hover {
+    border-color: var(--lime);
+  }
+</style>

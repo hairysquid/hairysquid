@@ -1,8 +1,0 @@
-{
-  "forms": {
-    "contactForm": {
-      "name": "contactForm",
-      "actions": [{ "type": "email", "to": "hello@hairysquid.com" }]
-    }
-  }
-}
